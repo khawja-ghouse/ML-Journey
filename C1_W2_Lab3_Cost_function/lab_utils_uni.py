@@ -2,9 +2,9 @@
 lab_utils_uni.py
     routines used in Course 1, Week2, labs1-3 dealing with single variables (univariate)
 """
+import os
 import numpy as np
 import matplotlib.pyplot as plt
-import ipy
 from matplotlib.ticker import MaxNLocator
 from matplotlib.gridspec import GridSpec
 from matplotlib.colors import LinearSegmentedColormap
@@ -12,7 +12,7 @@ from ipywidgets import interact
 from lab_utils_common import compute_cost
 from lab_utils_common import dlblue, dlorange, dldarkred, dlmagenta, dlpurple, dlcolors
 
-plt.style.use('./deeplearning.mplstyle')
+plt.style.use(os.path.join(os.path.dirname(__file__), 'deeplearning.mplstyle'))
 n_bin = 5
 dlcm = LinearSegmentedColormap.from_list(
         'dl_map', dlcolors, N=n_bin)
@@ -67,6 +67,7 @@ def mk_cost_lines(x,y,w,b, ax):
 def plt_intuition(x_train, y_train):
 
     w_range = np.array([200-200,200+200])
+    print(w_range)
     tmp_b = 100
 
     w_array = np.arange(*w_range, 5)

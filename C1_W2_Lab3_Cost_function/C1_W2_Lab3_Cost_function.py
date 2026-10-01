@@ -1,7 +1,8 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from lab_utils_uni import plt_intuition, plt_stationary, plt_update_onclick, soup_bowl
-plt.style.use('./deeplearning.mplstyle')
+plt.style.use(os.path.join(os.path.dirname(__file__), 'deeplearning.mplstyle'))
 
 
 x_train = np.array([1.0, 2.0])           #(size in 1000 square feet)
